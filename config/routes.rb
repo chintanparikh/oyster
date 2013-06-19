@@ -1,4 +1,6 @@
 Oyster::Application.routes.draw do
+  resources :endpoint, except: [:edit, :update]
+  root to: "endpoints#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
