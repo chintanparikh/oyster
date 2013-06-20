@@ -15,7 +15,7 @@ describe EndpointsController do
     end
     
     it "should redirect to the correct endpoint" do
-      subject.should redirect_to assigns[:endpoint].id
+      subject.should redirect_to assigns[:endpoint]
     end
   end
 

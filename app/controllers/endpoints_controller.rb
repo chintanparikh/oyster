@@ -1,6 +1,7 @@
 class EndpointsController < ApplicationController
   def index
     # Empty action/splash page with link to create a new endpoint
+    @endpoint = Endpoint.new
   end
 
   def create
