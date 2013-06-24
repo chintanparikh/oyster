@@ -1,2 +1,47 @@
-= form_for @endpoint do |f|
-  = f.submit "Create new endpoint"
+%body
+.container
+  .row.demo-row
+    .span12{:style => "margin-top: 10px; margin-left:"}
+      .navbar.navbar-inverse
+        .navbar-inner
+          .container
+            %button.btn.btn-navbar{"data-target" => "#nav-collapse-01", "data-toggle" => "collapse", :type => "button"}
+            #nav-collapse-01.nav-collapse.collapse
+              %ul.nav
+                %li
+                  %a{:href => "#fakelink"}
+                    OYSTER
+                %li
+                  .span3
+                    .btn-toolbar{:style => "\n                          margin:  0;\n                          "}
+                      .btn-group{:style => "\n                            margin-top:  8px;\n                            "}
+                        %a.btn.btn-primary{:href => "#fakelink", :style => "\n                              line-height: 18px;\n                              "}
+                          %i.fui-eye
+                          New Endpoint
+                    / /toolbar
+            / /.nav
+.container
+  .demo-headline{:style => "\n        padding-top:  0;\n        "}
+    %h1.demo-logo
+      .logo
+      Oyster
+      %small Instant API Endpoint
+    .span4{:style => "margin-left: 320px; margin-top: 20px;"}
+      %a.btn.btn-large.btn-block.btn-primary{:href => "#fakelink", :style => "border-bottom: 1px solid #16A085"}
+        %i.fui-eye> &nbsp;
+        Create new endpoint
+  / /demo-headline
+/ /container
+.container
+  .row
+    .span12{:style => "text-align: center;"}
+      %p
+        %a{:href => "#"} Source
+        \//
+        By
+        = succeed "/" do
+          %a{:href => "http://github.com/chintanparikh"} git:chintanparikh
+        %a{:href => "http://twitter.com/chintanparikh94"} @chintanparikh94
+        \//
+        %a{:href => "http://designmodo.com/flat-free/"} UI ♥
+    / /span8

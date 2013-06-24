@@ -1,7 +1,12 @@
 Oyster::Application.routes.draw do
   resources :endpoints, except: [:edit, :update]
+  post "/endpoints/:endpoint_id" => "contents#create"
+
   # for some reason it's not creating the #create route
   root to: "endpoints#index"
+
+  post "*token" => "contents#create_with_token", as: :contents_create_with_token
+  get "*token" => "endpoints#show_with_token", as: :endpoint_token
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,13 +6,17 @@ class EndpointsController < ApplicationController
 
   def create
     @endpoint = Endpoint.create
-    redirect_to @endpoint
+    redirect_to endpoint_token_path @endpoint.token
   end
 
   def show
     @endpoint = Endpoint.find(params[:id])
+    @content = @endpoint.content
   end
 
-  def destroy
+  def show_with_token
+    @endpoint = Endpoint.find_by_token params[:token]
+    @content = @endpoint.content
+    render :show
   end
 end
