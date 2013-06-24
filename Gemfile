@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'flatui-rails'
 
 
 # Gems used only for assets and not required
