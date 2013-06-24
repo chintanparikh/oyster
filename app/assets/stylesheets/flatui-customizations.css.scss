@@ -782,6 +782,20 @@ you can use the generic selector below, but it's slower:
   margin-top: -3px;
 }
 
+
+#main_button button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #ffffff;
+  margin-top: -3px;
+}
+
+#main_button {
+  border-bottom: 1px solid #16A085;
+  font-family: Lato, sans-serif;
+}
+
 form {
   margin: 0;
 }

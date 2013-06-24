@@ -1,2 +1,67 @@
-- @content.each do |content|
-  = content.content
+.container
+  .row.demo-row
+    .span12{:style => "margin-top: 10px; margin-left:"}
+      .navbar.navbar-inverse
+        .navbar-inner
+          .container
+            %button.btn.btn-navbar{"data-target" => "#nav-collapse-01", "data-toggle" => "collapse", :type => "button"}
+            #nav-collapse-01.nav-collapse.collapse
+              %ul.nav
+                %li
+                  %a{:href => "#fakelink"}
+                    OYSTER
+                %li{:style => ""}
+                  %input.span8{:style => "\n    height:  17px;\n    border: 1px solid #000000;\n    margin-bottom: 0;\n    margin-top:  9px;\n", :type => "text", :value => "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
+            / /.nav
+.container
+  .row.demo-samples
+    .span9{:style => "\n-moz-border-radius: 8px 8px 6px 6px;\nborder-radius: 8px 8px 6px 6px;"}
+      -@content.each do |content|
+        %pre
+          %code
+            =JSON.pretty_generate JSON.parse(content.content)
+    .span3
+      .todo.mrm
+        .todo-search
+          %input.todo-search-field{:placeholder => "Search", :type => "search", :value => ""}
+        %ul
+          %li.todo-done
+            .todo-content
+              %h4.todo-name
+                Meet
+                %strong Adrian
+                at
+                %strong 6pm
+              Times Square
+          %li
+            .todo-content
+              %h4.todo-name
+                Chat with
+                %strong V.Kudinov
+              Skype conference an 9 am
+          %li
+            .todo-content
+              %h4.todo-name
+                Watch
+                %strong Iron Man
+              1998 Broadway
+          %li
+            .todo-content
+              %h4.todo-name
+                Fix bug on a
+                %strong Website
+              As soon as possible
+    / /todo list
+.container
+  .row
+    .span12{:style => "text-align: center; margin-top: 20px;"}
+      %p
+        %a{:href => "#"} Source
+        \//
+        By
+        = succeed "/" do
+          %a{:href => "http://github.com/chintanparikh"} git:chintanparikh
+        %a{:href => "http://twitter.com/chintanparikh94"} @chintanparikh94
+        \//
+        %a{:href => "http://designmodo.com/flat-free/"} UI ♥
+    / /span8
