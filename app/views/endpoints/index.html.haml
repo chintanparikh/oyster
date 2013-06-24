@@ -13,15 +13,16 @@
                     OYSTER
                 %li
                   .span3
-                    .btn-toolbar{:style => "\n                          margin:  0;\n                          "}
-                      .btn-group{:style => "\n                            margin-top:  8px;\n                            "}
-                        %a.btn.btn-primary{:href => "#fakelink", :style => "\n                              line-height: 18px;\n                              "}
-                          %i.fui-eye
-                          New Endpoint
+                    .btn-toolbar{:style => "margin: 0;"}
+                      .btn-group{:style => "margin-top: 8px;"}
+                        =form_for @endpoint do |f|
+                          .btn.btn-primary#new_endpoint_nav
+                            %i.fui-eye
+                            =f.button "New Endpoint"
                     / /toolbar
             / /.nav
 .container
-  .demo-headline{:style => "\n        padding-top:  0;\n        "}
+  .demo-headline{:style => "padding-top:  0;"}
     %h1.demo-logo
       .logo
       Oyster
