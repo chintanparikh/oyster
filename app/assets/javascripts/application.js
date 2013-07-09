@@ -15,3 +15,4 @@
 //= require twitter/bootstrap
 //= require flat-ui
 //= require_tree .
+//= require google-code-prettify-rails/prettify

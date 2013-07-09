@@ -18,7 +18,7 @@
     .span9{:style => "\n-moz-border-radius: 8px 8px 6px 6px;\nborder-radius: 8px 8px 6px 6px;"}
       -@content.each do |content|
         %pre
-          %code
+          %code.prettyprint
             =JSON.pretty_generate(JSON[content.content])
     .span3
       .todo.mrm
