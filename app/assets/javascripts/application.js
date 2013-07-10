@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require flat-ui
-//= require_tree .
 //= require google-code-prettify-rails/prettify
+//= require_tree .
