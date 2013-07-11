@@ -5,7 +5,7 @@ describe Endpoint do
   # validations
   
   # failing for some reason? Shoulda might be messed up ...
-  # it { should validate_presence_of(:token) }
+  it { should validate_presence_of(:token) }
 
   describe "self.generate_token" do
     it "should generate a random token" do
