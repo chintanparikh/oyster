@@ -8,8 +8,7 @@
             #nav-collapse-01.nav-collapse.collapse
               %ul.nav
                 %li
-                  %a{:href => "#fakelink"}
-                    OYSTER
+                  =link_to "OYSTER", root_path
                 %li{:style => ""}
                   %input.span8{:style => "\n    height:  17px;\n    border: 1px solid #000000;\n    margin-bottom: 0;\n    margin-top:  9px;\n", :type => "text", :value => "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
             / /.nav
