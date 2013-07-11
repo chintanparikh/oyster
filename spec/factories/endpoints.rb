@@ -8,8 +8,8 @@ FactoryGirl.define do
         contents_count 2
       end
 
-      after_create do |endpoint|
-        contents_count.times do { FactoryGirl.create(:contents, endpoint: endpoint) }
+      before(:create) do |endpoint, eval|
+        eval.contents_count.times { FactoryGirl.create(:contents, endpoint: endpoint) }
       end
     end
   end
