@@ -19,4 +19,47 @@ describe EndpointsController do
     end
   end
 
+  describe "#show" do
+    let(:endpoint) { FactoryGirl.create(:endpoint, :with_contents) }
+    let(:params) { {id: endpoint.id} }
+    subject { get :show, params }
+
+    it "should get the correct endpoint" do
+      subject
+      assigns[:endpoint].should == endpoint
+    end
+
+    it "should get the content" do
+      subject
+      assigns[:content].sort.should == endpoint.content.sort
+    end
+
+    it "should render the correct template" do
+      subject
+      response.should render_template(:show)
+    end
+  end
+
+  describe "#show_with_token" do
+    let(:endpoint) { FactoryGirl.create(:endpoint, :with_contents) }
+    let(:params) { {token: endpoint.token} }
+    subject { get :show_with_token, params }
+
+    it "should get the correct endpoint" do
+      subject
+      assigns[:endpoint].should == endpoint
+    end
+
+    it "should get the content" do
+      subject
+      assigns[:content].sort.should == endpoint.content.sort
+    end
+
+    it "should render the correct template" do
+      subject
+      response.should render_template(:show)
+    end
+  end
+
+
 end

@@ -9,7 +9,7 @@ FactoryGirl.define do
       end
 
       before(:create) do |endpoint, eval|
-        eval.contents_count.times { FactoryGirl.create(:contents, endpoint: endpoint) }
+        eval.contents_count.times { FactoryGirl.create(:content, endpoint: endpoint) }
       end
     end
   end
