@@ -10,6 +10,11 @@ describe Endpoint do
   # associations
   it { should have_many(:content) }
 
+  # mass assignment
+  [:token].each do |attribute|
+    it {should allow_mass_assignment_of(attribute) }
+  end
+
   describe "self.generate_token" do
     it "should generate a random token" do
       Endpoint.generate_token.should_not == Endpoint.generate_token
