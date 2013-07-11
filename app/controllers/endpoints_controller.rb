@@ -11,12 +11,12 @@ class EndpointsController < ApplicationController
 
   def show
     @endpoint = Endpoint.find(params[:id])
-    @content = @endpoint.content
+    @content = @endpoint.order("id DESC")
   end
 
   def show_with_token
     @endpoint = Endpoint.find_by_token params[:token]
-    @content = @endpoint.content
+    @content = @endpoint.content.order("id DESC")
     render :show
   end
 end
