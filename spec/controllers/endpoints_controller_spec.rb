@@ -15,7 +15,7 @@ describe EndpointsController do
     end
     
     it "should redirect to the correct endpoint" do
-      subject.should redirect_to assigns[:endpoint]
+      subject.should redirect_to endpoint_token_path(assigns[:endpoint].token)
     end
   end
 

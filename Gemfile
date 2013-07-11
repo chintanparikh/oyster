@@ -37,7 +37,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '>= 2.2.0'
 end
 
 gem 'jquery-rails'

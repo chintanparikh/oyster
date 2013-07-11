@@ -5,7 +5,7 @@ class EndpointsController < ApplicationController
   end
 
   def create
-    @endpoint = Endpoint.create
+    @endpoint = Endpoint.create(token: Endpoint.generate_token)
     redirect_to endpoint_token_path @endpoint.token
   end
 

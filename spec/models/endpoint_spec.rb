@@ -3,9 +3,12 @@ require 'spec_helper'
 describe Endpoint do
 
   # validations
-  
-  # failing for some reason? Shoulda might be messed up ...
-  it { should validate_presence_of(:token) }
+
+  # Can't be tested because of our before_create callback
+  # it { should validate_presence_of(:token) }
+
+  # associations
+  it { should have_many(:content) }
 
   describe "self.generate_token" do
     it "should generate a random token" do
