@@ -32,17 +32,4 @@
           %i.fui-eye
           =f.button "Create New Endpoint"
   / /demo-headline
-/ /container
-.container
-  .row
-    .span12{:style => "text-align: center;"}
-      %p
-        %a{:href => "#"} Source
-        \//
-        By
-        = succeed "/" do
-          %a{:href => "http://github.com/chintanparikh"} git:chintanparikh
-        %a{:href => "http://twitter.com/chintanparikh94"} @chintanparikh94
-        \//
-        %a{:href => "http://designmodo.com/flat-free/"} UI ♥
-    / /span8
+  =render 'footer'
