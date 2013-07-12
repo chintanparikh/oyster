@@ -14,10 +14,9 @@
             / /.nav
 .container
   .row.demo-samples
-    .span9{:style => "\n-moz-border-radius: 8px 8px 6px 6px;\nborder-radius: 8px 8px 6px 6px;"}
+    #content.span9{:style => "-moz-border-radius: 8px 8px 6px 6px; border-radius: 8px 8px 6px 6px;", data: {update_path: new_content_path(@endpoint.id, 0) }}
       -@content.each do |content|
-        %pre{data: {update_path: new_content_path(@endpoint.id, content.id) } }
-          %code.prettyprint~ JSON.pretty_generate(JSON[content.content])
+        =render 'content', content: content
     .span3
       .todo.mrm
         .todo-search

@@ -1,0 +1,27 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+$ ->
+  prettyPrint()
+
+  setInterval (->
+    first = $('pre')[0]
+
+    if typeof first == 'undefined'
+      first = $("#content")
+
+    url = $(first).data('update-path')
+  	
+    $.ajax
+  	  url: url
+  	  type: "GET"
+  	  success: (response) ->
+        content = response.content
+        if content != null
+          $.each(content, (id, value) ->
+            $(value).hide().prependTo("#content").slideDown("slow")
+            prettyPrint()
+          )
+
+  ), 5000

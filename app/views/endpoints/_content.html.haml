@@ -1,0 +1,2 @@
+%pre{data: {update_path: new_content_path(@endpoint.id, content.id) } }
+  %code.prettyprint~ JSON.pretty_generate(JSON[content.content])

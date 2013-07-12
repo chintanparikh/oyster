@@ -32,7 +32,8 @@ class EndpointsController < ApplicationController
       #     7: "{another_key: another_value}"      
       #   }
       # }
-      new_content = {content: Hash[content.collect { |v| [v.id, v.content] }]}
+      new_content = {content: content.collect { |c| render_to_string(:partial => 'endpoints/content', :layout => false, 
+                                                    :locals => {:content => c}) }}
     end
 
     render json: new_content.to_json
