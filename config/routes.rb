@@ -1,8 +1,8 @@
 Oyster::Application.routes.draw do
   resources :endpoints, except: [:edit, :update]
   post "/endpoints/:endpoint_id" => "contents#create"
+  get "/endpoints/:endpoint_id/new_content/:last_content_id" => "endpoints#new_content", as: :new_content
 
-  # for some reason it's not creating the #create route
   root to: "endpoints#index"
 
   post "*token" => "contents#create", as: :contents_create_with_token
