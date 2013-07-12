@@ -6,22 +6,23 @@ $ ->
   prettyPrint()
 
   setInterval (->
-    first = $('pre')[0]
+    if $("#autoload").hasClass('todo-done')
+      first = $('pre')[0]
 
-    if typeof first == 'undefined'
-      first = $("#content")
+      if typeof first == 'undefined'
+        first = $("#content")
 
-    url = $(first).data('update-path')
-  	
-    $.ajax
-  	  url: url
-  	  type: "GET"
-  	  success: (response) ->
-        content = response.content
-        if content != null
-          $.each(content, (id, value) ->
-            $(value).hide().prependTo("#content").slideDown("slow")
-            prettyPrint()
-          )
+      url = $(first).data('update-path')
+    	
+      $.ajax
+    	  url: url
+    	  type: "GET"
+    	  success: (response) ->
+          content = response.content
+          if content != null
+            $.each(content, (id, value) ->
+              $(value).hide().prependTo("#content").slideDown("slow")
+              prettyPrint()
+            )
 
   ), 5000
